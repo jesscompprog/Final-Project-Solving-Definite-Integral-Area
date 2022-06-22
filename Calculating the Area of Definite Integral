@@ -1,0 +1,44 @@
+package solving.definite.integral;
+
+/**
+ *
+ * @author Jess
+ */
+public class SolvingDefiniteIntegral {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static final double stepSize = 1E-5;
+    
+    public static void main(String[] args) {
+        //The sample equation: -2x^2 + 8x
+        //Any equation is applicable to this code.
+        System.out.println(solveIntegral(0, 5, -2, 8, 0));
+        
+    }
+    //Start with parameters/ variables
+    static double solveIntegral(int start, int end, int a, int b, int c) {
+        
+    //Y-value is the height and the stepSize is the width.
+        double sum = 0;
+        
+        for (double i = start + stepSize; i < end; i += stepSize) {
+            
+            double Yvalue = a * i * i + b * i + c;
+            
+            double area = Yvalue * stepSize;
+            
+            sum += area;
+        }
+        
+        return sum;
+        
+    }
+    
+}
+            
+        
+    
+        
+    
